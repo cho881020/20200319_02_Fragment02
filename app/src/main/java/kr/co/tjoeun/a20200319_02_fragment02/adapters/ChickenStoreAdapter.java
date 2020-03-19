@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,6 +38,14 @@ public class ChickenStoreAdapter extends ArrayAdapter<ChickenStore> {
         if (row == null) {
             row = inf.inflate(R.layout.chicken_store_list_item, null);
         }
+
+        ChickenStore data = mList.get(position);
+
+        TextView storeNameTxt = row.findViewById(R.id.storeNameTxt);
+
+        storeNameTxt.setText(data.getStoreName());
+
+
 
         return row;
     }
