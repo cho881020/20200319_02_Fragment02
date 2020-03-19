@@ -10,10 +10,18 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import kr.co.tjoeun.a20200319_02_fragment02.R;
+import kr.co.tjoeun.a20200319_02_fragment02.adapters.ChickenStoreAdapter;
 import kr.co.tjoeun.a20200319_02_fragment02.databinding.FragmentChickenStoreBinding;
+import kr.co.tjoeun.a20200319_02_fragment02.datas.ChickenStore;
 
 public class ChickenStoreFragment extends Fragment {
+
+    List<ChickenStore> chickenStores = new ArrayList<>();
+    ChickenStoreAdapter adapter = null;
 
     FragmentChickenStoreBinding binding = null;
 
@@ -32,5 +40,11 @@ public class ChickenStoreFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        adapter = new ChickenStoreAdapter(getActivity(), R.layout.chicken_store_list_item, chickenStores);
+        binding.chickenListView.setAdapter(adapter);
+
+
+
     }
 }
