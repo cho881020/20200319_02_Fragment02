@@ -45,6 +45,18 @@ public class ChickenStoreFragment extends Fragment {
         binding.chickenListView.setAdapter(adapter);
 
 
+        chickenStores.add(new ChickenStore("굽네치킨"));
+        chickenStores.add(new ChickenStore("네네치킨"));
+        chickenStores.add(new ChickenStore("BBQ"));
+        chickenStores.add(new ChickenStore("BHC"));
+        chickenStores.add(new ChickenStore("지코바"));
+        chickenStores.add(new ChickenStore("교촌치킨"));
+        chickenStores.add(new ChickenStore("호식이두마리치킨"));
+        chickenStores.add(new ChickenStore("KFC"));
+
+        adapter.notifyDataSetChanged();
+
+
 
     }
 }
