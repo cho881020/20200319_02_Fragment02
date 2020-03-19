@@ -5,12 +5,15 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
+import kr.co.tjoeun.a20200319_02_fragment02.adapters.MainViewPagerAdapter;
 import kr.co.tjoeun.a20200319_02_fragment02.databinding.ActivityMainBinding;
 
 // 프로젝트 기본 세팅
 // Trello => 코드정리 요령 => 3번 내용 따라하기
 
 public class MainActivity extends BaseActivity {
+
+    MainViewPagerAdapter mvpa;
 
     ActivityMainBinding binding = null;
 
@@ -30,6 +33,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+        mvpa = new MainViewPagerAdapter(getSupportFragmentManager());
 
+        binding.mainViewPager.setAdapter(mvpa);
     }
 }
